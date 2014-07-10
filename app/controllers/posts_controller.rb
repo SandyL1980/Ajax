@@ -9,6 +9,10 @@ class PostsController < ApplicationController
     else
        @posts = Post.all
     end
+
+    if request.xhr?
+      render @posts
+    end
   end
 
   # GET /posts/1
